@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Travel Website
+  </title>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   .hero-section {
+            position: relative;
+            text-align: center; 
+            color: rgb(245, 250, 250);
+        }
+        .hero-section img {
+            width: 100%;
+            height: auto;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .hero-text .input-group {
+            max-width: 600px;
+            margin: auto;
+        }
+        .icon-section i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .icon-section p {
+            font-size: 1rem;
+        }
+        .popular-destinations img,
+        .best-destinations img,
+        .popular-activities img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .discount-section {
+            background-color: #e3dec5;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .discount-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .discount-section .btn {
+            margin-top: 20px;
+        }
+        .testimonial-section {
+            background-color: #f3e8d5;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .testimonial-section img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+        .gallery-section {
+            background-color:  #d8d8d1;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .gallery-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .fixed-image {
+
+    object-fit: cover; /* Isi penuh area dengan memotong jika perlu */
+    border-radius: 50%; /* Jika ingin tetap rounded-pill */
+  }
+  </style>
+ </head>
+ <body>
+  <header class="bg-light py-3">
+   <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand" href="#">
+     <img alt="TRASEM" height="50" src="assets/images/Gambar WhatsApp 2024-11-01 pukul 21.00.47_69627ed8.jpg" width="100"/>TRASEM
+    </a>
+    <nav class="ms-auto">
+     <ul class="nav">
+      <li class="nav-item">
+       <a class="nav-link" href="index.html">
+        Home
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="pemesanan.php">
+        Pemesanan
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#">
+        Services
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </nav>
+    <a class="btn btn-primary" href="#">
+     Login
+    </a>
+   </div>
+  </header>
+  <section class="hero-section">
+   <img alt="Hero Image" height="500" src="assets/images/kota-lama-semarang.png" width="1200"/>
+   <div class="hero-text">
+    <h1>
+     Liburan Seru di Semarang!
+    </h1>
+    <h2 class="fs-5">
+      ayo hibur kalian sendiri atau keluarga kalian dengan liburan yang indah di semarang
+    </h2>
+    <div class="input-group mt-4">
+     <input class="form-control" placeholder="Search..." type="text"/>
+     <button class="btn btn-primary">
+      Search
+     </button>
+    </div>
+   </div>
+  </section>
+  <section class="container my-5">
+    <h1> Kenapa harus memilih <br> perjalanan ini </h1>
+   <div class="row text-center icon-section">
+    <div class="col-md-3">
+      <img src="assets/images/ticket.svg.png" alt="" srcset="">
+     <p>
+      karna lebih fleksibel
+     </p>
+    </div>
+    <div class="col-md-3">
+     <img src="assets/images/medal.svg.png">
+     <p>
+      kenangan yang berkesan
+     </p>
+    </div>
+    <div class="col-md-3">
+     <img src="assets/images/diamond.svg.png">
+     <p>
+      nilai utama
+     </p>
+    </div>
+    <div class="col-md-3">
+     <img src ="assets/images/hot-air-balloon.svg.png">
+     </img>
+     <p>
+      dukungan dan penghargaan
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="container my-5">
+   <h2 class="mb-4">
+    Destinasi Populer
+   </h2>
+   <div class="row text-center popular-destinations">
+    <div class="col-md-2">
+     <img class="rounded-pill fixed-image" alt="Destination 1"  style="width: 150px;"src="assets/images/f496a13e-7684-4399-bd8a-0da160aa054b.jpg" />
+     <p>
+      lawang sewu
+     </p>
+     <h1 class="fs-6">
+      100x perjalanan
+     </h1>
+    </div>
+    <div class="col-md-2">
+     <img class="rounded-pill fixed-image " style="width: 130px;" alt="Destination 2"  src="assets/images/Gambar WhatsApp 2024-11-01 pukul 09.42.18_3f588afa.jpg" />
+     <p>
+      kota lama
+     </p>
+     <h1 class="fs-6">
+      300x perjalanan
+     </h1>
+    </div>
+    <div class="col-md-2">
+     <img class="rounded-pill fixed-image" alt="Destination 3"  style="width: 130px;" src="assets/images/instagram-valeskasimo-65300405-2159935250799209-1817033125236200098-n-83022a59420e26b1f239fac5e68b49c5_600x400.jpg" />
+     <p>
+      musium mereta api ambarawa
+     </p>
+     <h1 class="fs-6">
+      100x perjalanan
+     </h1>
+    </div>
+    <div class="col-md-2">
+     <img class="rounded-pill fixed-image"  alt="Destination 4"  style="width: 130px;" src="assets/images/17Tugu-Muda.jpg"/>
+     <p>
+      tugu muda
+     </p>
+     <h1 class="fs-6">
+      400x perjalanan
+     </h1>
+    </div>
+    <div class="col-md-2">
+     <img class="rounded-pill fixed-image" alt="Destination 5" style="width: 130px;"src="assets/images/1703025812_museum-ranggawarsita.jpg" />
+     <p>
+      musium ranggawarsita
+     </p>
+     <h1 class="fs-6">
+      600x perjalanan 
+     </h1>
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="container my-5">
+   <h2 class="mb-4">
+    Temukan Perjalanan yang Populer
+   </h2>
+   <div class="row">
+    <div class="col-md-4">
+     <img alt="Popular Trip 1" height="200" src="assets/images/images (1).jpg" width="350"/>
+     <p>
+      kampung pelangi
+     </p>
+     <section class="text-center mb-4">
+        4.8 (243)
+     </section>
+    </div>
+    <div class="col-md-4">
+     <img alt="Popular Trip 2" height="200" src="assets/images/saloka-theme-park-semarang-1_169.jpeg" width="350"/>
+     <p>
+      saloka theme park
+     </p>
+     <section class="text-center mb-4">
+        4.8 (243)
+     </section>
+    </div>
+    <div class="col-md-4">
+     <img alt="Popular Trip 3" height="200" src="assets/images/dusun-semilir-1030x768.jpg" width="350"/>
+     <p>
+      dusun semilir
+     </p>
+     <section class="text-center mb-4">
+        4.8 (243)
+     </section>
+    </div>
+   </div>
+  </section>
+  <section class="container my-5">
+   <div class="row">
+    <div class="col-md-6">
+     <img alt="Discount Image" height="300" src="assets/images/download (1).jpg" width="600"/>
+    </div>
+    <div class="col-md-6 discount-section">
+     <h2>
+      Dapatkan diskon hingga 35% untuk destinasi favorit Anda
+     </h2>
+     <p>
+      ayo penawaran terbatas jangan lewatkan ini
+     </p>
+     <a class="btn btn-primary" href="#">
+      boking
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="container my-5">
+   <h2 class="">
+    Kegiatan yang Populer
+   </h2>
+   <div class="row text-center popular-activities">
+    <div class="col-md-3">
+     <img alt="Activity 1" height="150" src="assets/images/small_68cruise3.jpeg" width="250"/>
+     <p>
+      pesiar
+     </p>
+    </div>
+    <div class="col-md-3">
+     <img alt="Activity 2" height="150" src="assets/images/1703025812_museum-ranggawarsita.jpg" width="250"/>
+     <p>
+      musium
+     </p>
+    </div>
+    <div class="col-md-3">
+     <img alt="Activity 3" height="150" src="assets/images/7-wisata-pantai-di-semarang-nomor-5-unik-tak-memiliki-pasir-tpw.jpg" width="250"/>
+     <p>
+      pantai
+     </p>
+    </div>
+    <div class="col-md-3 ">
+     <img alt="Activity 4" height="150" src="assets/images/kota-semarang.jpeg" width="250"/>
+     <p>
+      kota
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="container my-5">
+   <h2 class="">
+    Destinasi Terbaik
+   </h2>
+   <div class="row text-center best-destinations">
+    <div class="col-md-3">
+     <img alt="Best Destination 1" height="250" src="assets/images/Gambar WhatsApp 2024-11-01 pukul 11.40.51_368013ca.jpg" width="250"/>
+     <p>
+      celosia
+     </p>
+     <section class="text-center mb-4">
+        4.8 (243)
+     </section>
+    </div>
+    <div class="col-md-3">
+     <img alt="Best Destination 2" height="250" src="assets/images/56481871_156923868679244_5518212570347010175_n.jpg" width="250"/>
+     <p>
+      umbul sedomukti
+     </p>
+     <section class="text-center mb-4">
+        4.8 (243)
+     </section>
+    </div>
+    <div class="col-md-3">
+     <img alt="Best Destination 3" height="250" src="assets/images/57072731_732520200479038_3720937651591282095_n.jpg" width="250"/>
+     <p>
+      susun spa and resort
+     </p>
+     <section class="text-center mb-4">
+        4.8 (243)
+     </section>
+    </div>
+    <div class="col-md-2">
+     <img alt="Best Destination 4" height="250" src="assets/images/Gambar WhatsApp 2024-11-02 pukul 22.33.42_64f1614b.jpg" width="250"/>
+     <p>
+      curug lawe
+     </p>
+     <section class="text-center mb-4">
+        4.8 (243)
+     </section>
+    </div>
+   </div>
+  </section>
+  <section class="container my-5 testimonial-section">
+   <h2 class="text-center mb-4">
+    Penilaian Wisatawan
+   </h2>
+   <div class="d-flex justify-content-center">
+    <img alt="User 6" height="50" src="assets/images/Gambar WhatsApp 2024-11-01 pukul 21.59.48_f2f9c201.jpg" width="50"/>
+   </div>
+   <h1 class="fs-6">
+    pelayanan bagus
+   </h1>
+   <h2 class="fs-3">
+    semarang merupakan salah satu kota yang cukup murah dan bagus, dan memiliki wisata yang menarik di jawa tengah
+   </h2>
+   <h3 class="fs-6">
+    delia okta
+   </h3>
+   <h4 class="fs-6">
+    wisatawan
+   </h4>
+  </section>
+  <section class="container my-5 gallery-section">
+   <h2 class="text-center mb-4">
+    Foto-foto Wisatawan
+   </h2>
+   <div class="row gap-2 justify-content-evenly">
+    <div class="col-md-3">
+     <img alt="Gallery Image 1" height="250" src="assets/images/Gambar WhatsApp 2024-11-02 pukul 22.36.08_9cbe1ab8.jpg" width="250"/>
+    </div>
+    <div class="col-md-3">
+     <img alt="Gallery Image 2" height="250" src="assets/images/Gambar WhatsApp 2024-11-02 pukul 22.33.14_83f705cd.jpg" width="250"/>
+    </div>
+    <div class="col-md-3">
+     <img alt="Gallery Image 3" height="250" src="assets/images/dusun-semilir-1030x768.jpg" width="250"/>
+    </div>
+    <div class="col-md-3">
+     <img alt="Gallery Image 4" height="250" src="assets/images/17Tugu-Muda.jpg" width="250"/>
+    </div>
+    <div class="col-md-3">
+     <img alt="Gallery Image 5" height="250" src="assets/images/Gambar WhatsApp 2024-11-01 pukul 09.42.18_3f588afa.jpg" width="250"/>
+    </div>
+    <div class="col-md-3">
+     <img alt="Gallery Image 6" height="250" src="assets/images/Gambar WhatsApp 2024-11-01 pukul 11.40.51_368013ca.jpg" width="250"/>
+    </div>
+    <div class="col-md-3">
+     <img alt="Gallery Image 7" height="250" src="assets/images/f496a13e-7684-4399-bd8a-0da160aa054b.jpg" width="250"/>
+    </div>
+    <div class="col-md-3">
+     <img alt="Gallery Image 8" height="250" src="assets/images/Gambar WhatsApp 2024-11-02 pukul 23.01.51_ddc7bc9a.jpg" width="250"/>
+    </div>
+   </div>
+  </section>
+  <footer class="bg-light py-3 text-center">
+   <p>
+    © 2023 Travel Website
+   </p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+ </body>
+</html>
