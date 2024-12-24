@@ -23,11 +23,12 @@ if(isset($_POST['nama_pemesanan'])){
 	$query = mysqli_query($db,$sql);
 	if ($query) {
         // Jika berhasil, alihkan ke read.php
-        header("Location: read.php");
+        $id_pemesanan = mysqli_insert_id($db);
+        header("Location: ../invoice.php?id_pemesanan=".$id_pemesanan);
         exit();
     } else {
         // Jika gagal, tetap di halaman pemesanan.php dengan pesan error
-        echo "Data gagal disimpan: " . mysqli_error($db);
+        echo "Data gagal disimpan";
     }
 }else{
     //muncul pesan error
