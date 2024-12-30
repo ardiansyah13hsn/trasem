@@ -107,7 +107,7 @@
             </li>
             <li class="nav-item">
              <a class="nav-link" href="daftar.php">
-              Daftar Pemesan
+              Daftar Pemesanan
              </a>
             </li>
             <li class="nav-item">
@@ -143,9 +143,7 @@
            <?php
 include 'lib/koneksi.php';
 
-$id_pemesanan = htmlentities($_GET['id_pemesanan']);
-
-$sql = "SELECT * FROM pemesanan where id_pemesanan = '$id_pemesanan' and is_deleted=0";
+$sql = "SELECT * FROM pemesanan where is_deleted = 0 order by created_at desc";
 
 $query = mysqli_query($db,$sql);
 
@@ -155,75 +153,43 @@ if(mysqli_num_rows($query)==0)
 }else{
     $detail = mysqli_fetch_row($query);
 ?>
+<h1 class="py-4 text-center">Daftar Pemesanan</h1>
+<table class="table container">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nama Pemesan</th>
+      <th scope="col">Nomor HP</th>
+      <th scope="col">Tanggal Berangkat</th>
+      <th scope="col">Total Tagihan</th>
+      <th scope="col">Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+      <?php
+      $co = 1;
+      while($detail = mysqli_fetch_assoc($query)){
+      ?>
+    <tr>
+      <th scope="row"><?=$co?></th>
+      <td><?=$detail['nama_pemesanan']?></td>
+      <td><?=$detail['hp_pemesan']?></td>
+      <td><?=$detail['waktu_wisata']?></td>
+      <td><?=$detail['total_tagihan']?></td>
+      <td><a class="btn btn-success" href="invoice.php?id_pemesanan=<?=$detail['id_pemesanan']?>">Detail</a> 
+      <a class="btn btn-warning" href="index.php?aksi=edit&id_pemesanan=<?=$detail['id_pemesanan']?>">Edit</a> 
+      <a class="btn btn-danger" href="hapus.php?id_pemesanan=<?=$detail['id_pemesanan']?>">Hapus</a></td>
+    </tr>
+        <?php
+        $co++;
+        }
+        ?>
+  </tbody>
+</table>
+<?php
+} 
+?>
 
-<main class="flex-shrink-0">
-  <div class="container">
-    <form method="post" action="lib/proses.php">
-<div class="card mt-2">
-  <div class="card-header bg-dark text-white">
-    Detail Pemesanan Paket Wisata #<?=$detail[0]?>
-  </div>
-  <div class="card-body">
-	<div class="mb-3">
-	  <label for="nama_pemesanan" class="form-label">Nama Lengkap</label>
-	  <div id="nama_pemesan"><?=$detail[1]?></div>
-	</div>
-	<div class="mb-3">
-	  <label for="hp_pemesan" class="form-label">Nomor Handphone</label>
-	  <div id="hp_pemesan"><?=$detail[2]?></div>
-	</div>
-	<div class="mb-3">
-	  <label for="waktu_wisata" class="form-label">Waktu Mulai Perjalanan</label>
-	  <div id="waktu_wisata"><?=$detail[3]?></div>
-	</div>
-	<div class="mb-3">
-	  <label for="hari_wisata" class="form-label">Hari Wisata</label>
-	  <div id="hari_wisata"><?=$detail[4]?></div>
-	</div>
-	<div class="mb-3">
-	    <div class="form-check">
-		  <input class="form-check-input" type="checkbox" name="paket_inap" value="1" id="paket_inap" <?=($detail[5]==1)?'checked':''?> disabled>
-		  <label class="form-check-label" for="paket_inap">
-			Penginapan (Rp. 1.000.000)
-		  </label>
-		</div>
-	</div>
-	<div class="mb-3">
-	    <div class="form-check">
-		  <input class="form-check-input" type="checkbox" name="paket_transport" value="1" id="paket_transport" <?=($detail[6]==1)?'checked':''?> disabled>
-		  <label class="form-check-label" for="paket_transport">
-			Transportasi (Rp. 1.200.000)
-		  </label>
-		</div>
-	</div>
-	<div class="mb-3">
-	    <div class="form-check">
-		  <input class="form-check-input" type="checkbox" name="paket_makan" value="1" id="paket_makan" <?=($detail[7]==1)?'checked':''?> disabled>
-		  <label class="form-check-label" for="paket_makan">
-			Service/ Makan (Rp. 500.000)
-		  </label>
-		</div>
-	</div>
-	<div class="mb-3">
-	  <label for="jumlah_peserta" class="form-label">Jumlah Peserta</label>
-	   <div id="jumlah_peserta"><?=$detail[8]?></div>
-	 </div>
-	<div class="mb-3">
-	  <label for="total" class="form-label">Total Tagihan</label>
-	  <div id="total">Rp. <?=number_format($detail[9],0,',','.')?></div>
-	</div>
-	<div class="mb-3">
-	  <label for="created_at" class="form-label">Waktu Pemesanan</label>
-	  <div id="created_at"><?=$detail[11]?></div>
-	</div>
-  </div>
-  <div class="card-footer d-print-none">
-    <a href="pemesanan.php" class="btn btn-primary">Buat Pesanan Baru</a>
-	<a href="#" onclick="window.print()" class="btn btn-success">Cetak</a>
-  </div>
-</div>
-<?php } ?>
-          </main>
           <footer class="bg-light py-3 text-center">
             <p>
              © 2023 Travel Website
